@@ -14,14 +14,5 @@ class PlayerSprite extends Contender {
         })
         // end GH1
     }
-
-    // GH1
-    public updateAim(): void {
-        if (this.vx != 0 || this.vy != 0) {
-            this.lastVx = this.vx;
-            this.lastVy = this.vy;
-        }
-    }
-    // end GH1
 }
 

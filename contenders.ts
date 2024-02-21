@@ -3,8 +3,6 @@ abstract class Contender extends sprites.ExtendableSprite {
     protected tileImage: Image;
     // GH1
     public colour: number;
-    public lastVx: number = 100;
-    public lastVy: number = 0;
     // end GH1
 
     // GH1
