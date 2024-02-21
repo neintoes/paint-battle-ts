@@ -33,6 +33,7 @@ abstract class Contender extends sprites.ExtendableSprite {
     }
 
     public stun(): void {
+        this.sayText("!", 1000)
         for(let i = 0; i < 100; i++) {
             tiles.placeOnTile(this, this.tilemapLocation());
             pause(10);

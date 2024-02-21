@@ -10,15 +10,16 @@ class EventHandlerManager {
 
     private registerOverlapEvents(): void {
         // GH1
-        function hit(contenderSprite: Contender, proj: Projectile): void {
+        const hit = (contenderSprite: Contender, proj: Projectile): void => {
             if (proj.colour == contenderSprite.colour) {
                 return;
             }
             contenderSprite.stun();
             proj.destroy();
-        }
-        sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function hit(contenderSprite, proj) {});
-        sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function hit(contenderSprite, proj) {});
+        };
+
+        sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, hit);
+        sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, hit);
         // end GH1
 
         scene.onHitWall(SpriteKind.Enemy, (opponent: OpponentSprite, location: tiles.Location) => {
