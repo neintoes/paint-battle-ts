@@ -22,9 +22,6 @@ class GameManager {
             sprites.allOfKind(SpriteKind.Enemy).forEach((opponent: OpponentSprite) => {
                 opponent.behaviour();
             })
-            // GH1
-            this.playerSprite.updateAim();
-            // end GH1
             this.playerSprite.placeTile();
         })
     }
