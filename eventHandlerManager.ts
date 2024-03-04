@@ -25,6 +25,16 @@ class EventHandlerManager {
         scene.onHitWall(SpriteKind.Enemy, (opponent: OpponentSprite, location: tiles.Location) => {
             opponent.changeDir()
         })
+
+        //GH3
+        const pickupStar = (contenderSprite: Contender, star: Star): void => {
+            let tileImage = contenderSprite.tileImage;
+            star.paintArea(tileImage);
+            star.destroy();
+        };
+        sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, pickupStar);
+        sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Food, pickupStar);
+        // end GH3
     }
 
     private registerCountdownEvents(): void {

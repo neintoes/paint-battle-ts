@@ -23,7 +23,8 @@
         "eventHandlerManager.ts",
         "contenders.ts",
         "playerSprite.ts",
-        "projectile.ts"
+        "projectile.ts",
+        "collectables.ts"
     ],
     "testFiles": [
         "test.ts"

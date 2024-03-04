@@ -1,6 +1,9 @@
 abstract class Contender extends sprites.ExtendableSprite {
     protected speed: number = 75;
-    protected tileImage: Image;
+    // protected tileImage: Image;
+    // GH3
+    public tileImage: Image
+    // end GH3
     // GH1
     public colour: number;
     // end GH1
@@ -86,5 +89,12 @@ class OpponentSprite extends Contender {
         }
         this.placeTile();
     }
+
+    // GH3
+    public moveWithPathfinding(location: tiles.Location): void {
+        let path = scene.aStar(this.tilemapLocation(), location)
+        scene.followPath(this, path, this.speed);
+    }
+    // end GH3
 }
 
